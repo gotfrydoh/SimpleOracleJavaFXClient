@@ -3,22 +3,17 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import sample.Entity.DBUser;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.*;
-import java.util.ResourceBundle;
 
 
 public class Controller {
@@ -50,7 +45,7 @@ public class Controller {
     //not used
     public boolean openDBWindow(){
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DBWindow.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../resources/DBWindow.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1,785,515));
@@ -108,7 +103,7 @@ public class Controller {
                     stage.close();
 
                     try {
-                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DBWindow.fxml"));
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/DBWindow.fxml"));
                         Parent root1 = (Parent) fxmlLoader.load();
                         stage.setUserData(userToPass);
                         Scene scene = new Scene(root1,1107,539);

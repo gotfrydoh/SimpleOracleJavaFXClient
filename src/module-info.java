@@ -5,4 +5,5 @@ module OracleDBClient {
 
     opens sample;
     opens sample.Entity;
+    opens sample.Controllers;
 }
