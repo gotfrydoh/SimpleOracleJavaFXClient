@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchorPaneBackground" fx:id="sampleAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox prefHeight="518.0" prefWidth="109.0" style="-fx-background-color: Coral;" />
+      <Label layoutX="173.0" layoutY="37.0" text="Oracle Database Connection" AnchorPane.leftAnchor="173.0">
+         <font>
+            <Font name="SansSerif Regular" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="173.0" layoutY="110.0" text="Username">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField id="usernameTextField" fx:id="usernameTextField" layoutX="173.0" layoutY="142.0" prefHeight="19.0" prefWidth="221.0" />
+      <Label layoutX="173.0" layoutY="186.0" text="Password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <PasswordField id="passwordTextField" fx:id="passwordTextField" layoutX="173.0" layoutY="210.0" prefHeight="16.0" prefWidth="221.0" />
+      <Label layoutX="173.0" layoutY="253.0" text="Oracle SID">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField id="sidTextField" fx:id="sidTextField" layoutX="173.0" layoutY="278.0" prefHeight="25.0" prefWidth="221.0" />
+      <Label layoutX="173.0" layoutY="320.0" text="Port">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField id="portTextField" fx:id="portTextField" layoutX="173.0" layoutY="345.0" prefHeight="25.0" prefWidth="221.0" />
+      <Button fx:id="connectButton" layoutX="410.0" layoutY="472.0" mnemonicParsing="false" onAction="#connectOnClickMethod" prefHeight="25.0" prefWidth="109.0" text="Connect" />
+      <Label layoutX="174.0" layoutY="395.0" text="Hostname">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="hostnameTextField" layoutX="173.0" layoutY="425.0" prefHeight="25.0" prefWidth="221.0" />
+   </children>
+</AnchorPane>
