@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane prefHeight="539.0" prefWidth="1107.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.DBController">
+<AnchorPane fx:id="mainAnchorPane" prefHeight="539.0" prefWidth="1107.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.DBController">
    <children>
       <TabPane layoutX="-2.0" layoutY="71.0" prefHeight="462.0" prefWidth="1107.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -67,7 +67,7 @@
           </Tab>
           <Tab text="Employee">
                <content>
-
+                  <fx:include fx:id="employeeTab" source="EmployeeTab.fxml" />
                </content>
           </Tab>
         </tabs>

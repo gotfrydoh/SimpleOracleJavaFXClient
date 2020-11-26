@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="employeeTab" prefHeight="433.0" prefWidth="1107.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeTab">
+<AnchorPane fx:id="employeeTab" prefHeight="433.0" prefWidth="1107.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.EmployeeController">
    <children>
-      <Label layoutX="89.0" layoutY="73.0" text="chuj" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="443.0" layoutY="117.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <VBox layoutX="29.0" layoutY="27.0" prefHeight="238.0" prefWidth="168.0" spacing="19.0">
+         <children>
+            <Label text="Employee ID" />
+            <Label text="Name" />
+            <Label text="Last Name" />
+            <Label text="Phone number" />
+            <Label text="Adress" />
+            <Label text="ZIP Code" />
+            <Label text="Localization of work" />
+         </children>
+      </VBox>
+      <VBox layoutX="197.0" layoutY="27.0" prefHeight="238.0" prefWidth="216.0" spacing="10.5">
+         <children>
+            <TextField fx:id="idEmployeeTextField" disable="true" />
+            <TextField fx:id="nameTextField" />
+            <TextField fx:id="lastNameTextField" />
+            <TextField fx:id="phoneTextField" />
+            <TextField fx:id="adressTextField" />
+            <TextField fx:id="zipCodeTextField" />
+            <TextField fx:id="localizationOfWorkTextField" />
+         </children>
+      </VBox>
+      <TableView fx:id="tvEmployee" layoutX="437.0" layoutY="27.0" onMouseClicked="#handleMouseAction" prefHeight="349.0" prefWidth="641.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="56.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="94.0" text="NAME" />
+            <TableColumn fx:id="colLastName" prefWidth="95.0" text="LAST NAME" />
+            <TableColumn fx:id="colPhone" prefWidth="106.0" text="PHONE NUMBER" />
+            <TableColumn fx:id="colAdress" prefWidth="100.0" text="ADRESS" />
+            <TableColumn fx:id="colZipCode" text="ZIP CODE" />
+            <TableColumn fx:id="colLocOfWork" prefWidth="109.0" text="LOC. OF WORK" />
+        </columns>
+      </TableView>
+      <Button fx:id="insertButton" layoutX="197.0" layoutY="277.0" mnemonicParsing="false" onAction="#insertRecord" prefHeight="25.0" prefWidth="67.0" text="Insert" />
+      <Button fx:id="updateButton" layoutX="268.0" layoutY="277.0" mnemonicParsing="false" onAction="#updateRecord" prefHeight="25.0" prefWidth="67.0" text="Update" />
+      <Button fx:id="deleteButton" layoutX="340.0" layoutY="277.0" mnemonicParsing="false" onAction="#deleteRecord" prefHeight="25.0" prefWidth="73.0" text="Delete" />
+      <Button fx:id="refreshButton" layoutX="198.0" layoutY="312.0" mnemonicParsing="false" onAction="#refreshOnClick" prefHeight="25.0" prefWidth="216.0" text="Refresh" />
    </children>
 </AnchorPane>

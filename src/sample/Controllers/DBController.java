@@ -13,7 +13,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import org.w3c.dom.events.MouseEvent;
 import sample.Entity.Customer;
 import sample.Entity.DBUser;
@@ -28,6 +30,8 @@ import java.util.ResourceBundle;
 
 public class DBController {
 
+    @FXML
+    private AnchorPane mainAnchorPane;
     @FXML
     private TextField peselTextField;
     @FXML
@@ -70,7 +74,17 @@ public class DBController {
     private Button deleteButton;
     @FXML
     private Button refreshButton;
+    @FXML
+    private AnchorPane employeeTab;
 
+    //injecting controllers
+    @FXML
+    private EmployeeController employeeTabController;
+
+
+    public void initialize(){
+        employeeTabController.injectDBController(this);
+    }
 
 
     @FXML
@@ -181,7 +195,7 @@ public class DBController {
     }
 
 
-    private void executeQuery(String query) {
+    public void executeQuery(String query) {
         Connection conn = getConnection();
         Statement st;
         try{
@@ -192,8 +206,6 @@ public class DBController {
             e.printStackTrace();
         }
     }
-
-
 
 
 }
