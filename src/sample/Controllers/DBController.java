@@ -81,9 +81,13 @@ public class DBController {
     @FXML
     private EmployeeController employeeTabController;
 
+    @FXML
+    private CatalogOfModelsController catalogOfModelsTabController;
 
-    public void initialize(){
+
+    public void initialize() {
         employeeTabController.injectDBController(this);
+        catalogOfModelsTabController.injectDBController(this);
     }
 
 
