@@ -75,6 +75,11 @@
                   <fx:include fx:id="catalogOfModelsTab" source="CatalogOfModelsTab.fxml" />
                </content>
             </Tab>
+            <Tab text="Camper Vans">
+              <content>
+                <fx:include fx:id="carsTab" source="CarsTab.fxml"/>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="71.0" stroke="BLACK" strokeType="INSIDE" width="1107.0">

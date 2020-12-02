@@ -130,6 +130,7 @@ public class CatalogOfModelsController {
 
 
     public void refreshOnClick(){
+
         dbController.executeQuery("commit");
         showCatalog();
         idKMTextField.setText("");

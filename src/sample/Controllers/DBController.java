@@ -80,14 +80,16 @@ public class DBController {
     //injecting controllers
     @FXML
     private EmployeeController employeeTabController;
-
     @FXML
     private CatalogOfModelsController catalogOfModelsTabController;
+    @FXML
+    private CarsTabController carsTabController;
 
 
     public void initialize() {
         employeeTabController.injectDBController(this);
         catalogOfModelsTabController.injectDBController(this);
+        carsTabController.injectDBController(this);
     }
 
 
