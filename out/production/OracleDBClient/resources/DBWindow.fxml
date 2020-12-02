@@ -77,8 +77,13 @@
             </Tab>
             <Tab text="Camper Vans">
               <content>
-                <fx:include fx:id="carsTab" source="CarsTab.fxml"/>
+                <fx:include fx:id="carsTab" source="CarsTab.fxml" />
               </content>
+            </Tab>
+            <Tab text="Untitled Tab">
+                <content>
+                    <fx:include fx:id="registerTab" source="RegisterTab.fxml"/>
+                </content>
             </Tab>
         </tabs>
       </TabPane>
