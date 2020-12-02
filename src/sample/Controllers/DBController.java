@@ -84,12 +84,15 @@ public class DBController {
     private CatalogOfModelsController catalogOfModelsTabController;
     @FXML
     private CarsTabController carsTabController;
+    @FXML
+    private RegisterTabController registerTabController;
 
 
     public void initialize() {
         employeeTabController.injectDBController(this);
         catalogOfModelsTabController.injectDBController(this);
         carsTabController.injectDBController(this);
+        registerTabController.injectDBController(this);
     }
 
 

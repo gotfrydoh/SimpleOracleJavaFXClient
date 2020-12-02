@@ -16,7 +16,7 @@
       <VBox layoutX="37.0" layoutY="27.0" prefHeight="128.0" prefWidth="177.0">
          <children>
             <Label text="Car ID" />
-            <TextField fx:id="carIDTextField">
+            <TextField fx:id="carIDTextField" disable="true">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -33,17 +33,17 @@
       </VBox>
       <HBox layoutX="37.0" layoutY="184.0" prefHeight="25.0" prefWidth="177.0" spacing="10.0" AnchorPane.topAnchor="184.0">
          <children>
-            <Button fx:id="insertButton" mnemonicParsing="false" text="Insert" />
-            <Button fx:id="updateButton" mnemonicParsing="false" text="Update" />
-            <Button fx:id="deleteButton" mnemonicParsing="false" text="Delete" />
+            <Button fx:id="insertButton" mnemonicParsing="false" onAction="#insertRecord" text="Insert" />
+            <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateRecord" text="Update" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteRecord" text="Delete" />
          </children>
       </HBox>
       <Button fx:id="refreshButton" layoutX="37.0" layoutY="217.0" mnemonicParsing="false" onAction="#refreshOnClick" prefHeight="25.0" prefWidth="177.0" text="Refresh" />
-      <TableView fx:id="tvCars" layoutX="287.0" layoutY="39.0" prefHeight="349.0" prefWidth="341.0">
+      <TableView fx:id="tvCars" layoutX="287.0" layoutY="39.0" onMouseClicked="#handleMouseAction" prefHeight="349.0" prefWidth="341.0">
         <columns>
           <TableColumn fx:id="colCarID" prefWidth="75.0" text="CAR ID" />
-          <TableColumn fx:id="colIDKM" prefWidth="75.0" text="ID_KM" />
             <TableColumn fx:id="colModel" prefWidth="75.0" text="MODEL" />
+          <TableColumn fx:id="colIDKM" prefWidth="75.0" text="ID_KM" />
             <TableColumn fx:id="colLocOfCar" prefWidth="111.0" text="LOC. OF CAR" />
         </columns>
       </TableView>
