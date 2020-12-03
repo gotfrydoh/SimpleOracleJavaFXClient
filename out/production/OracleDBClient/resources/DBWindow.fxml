@@ -80,9 +80,9 @@
                 <fx:include fx:id="carsTab" source="CarsTab.fxml" />
               </content>
             </Tab>
-            <Tab text="Untitled Tab">
+            <Tab text="Registers">
                 <content>
-                    <fx:include fx:id="registerTab" source="RegisterTab.fxml"/>
+                    <fx:include fx:id="registerTab" source="RegisterTab.fxml" />
                 </content>
             </Tab>
         </tabs>

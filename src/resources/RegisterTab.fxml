@@ -77,8 +77,8 @@
       <HBox layoutX="29.0" layoutY="373.0" prefHeight="25.0" prefWidth="246.0" spacing="10.0">
          <children>
             <Button fx:id="insertButton" mnemonicParsing="false" onAction="#insertRecord" prefHeight="25.0" prefWidth="79.0" text="Insert" />
-            <Button fx:id="updateButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Update" />
-            <Button fx:id="deleteButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Delete" />
+            <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateRecord" prefHeight="25.0" prefWidth="77.0" text="Update" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteRecord" prefHeight="25.0" prefWidth="80.0" text="Delete" />
          </children>
       </HBox>
       <Button fx:id="refreshButton" layoutX="293.0" layoutY="373.0" mnemonicParsing="false" onAction="#refreshOnClick" prefHeight="25.0" prefWidth="77.0" text="Refresh" />

@@ -82,6 +82,32 @@ public class RegisterTabController implements Initializable {
         locComboBox.setItems(localizationList);
     }
 
+    @FXML
+    public void insertRecord(){
+        String query = "insert into v_rezerwacja(PESEL,ID_PRACOWNIKA, ID_EGZEMPLARZA,DATA_OD,DATA_DO,LOKALIZACJA_ODBIORU,CENA_CALKOWITA) values("+peselComboBox.getSelectionModel().getSelectedItem()+","+empComboBox.getSelectionModel().getSelectedItem()+
+                ","+carComboBox.getSelectionModel().getSelectedItem()+",'"+dateFromDP.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))+"','"+dateToDP.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))+"','"+
+                locComboBox.getSelectionModel().getSelectedItem()+"',"+priceTextField.getText()+") ";
+        dbController.executeQuery(query);
+        showRegisters();
+    }
+
+    @FXML
+    public void updateRecord(){
+        String query = "update V_REZERWACJA set PESEL="+peselComboBox.getSelectionModel().getSelectedItem()+",ID_PRACOWNIKA="+empComboBox.getSelectionModel().getSelectedItem()+",ID_EGZEMPLARZA="+carComboBox.getSelectionModel().getSelectedItem()+
+                ",DATA_OD='"+dateFromDP.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))+"',DATA_DO='"+dateToDP.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))+"',LOKALIZACJA_ODBIORU='"+locComboBox.getSelectionModel().getSelectedItem()+"',CENA_CALKOWITA="+priceTextField.getText()+"" +
+                "where ID_REZERWACJI="+regIdTextField.getText()+" ";
+        dbController.executeQuery(query);
+        showRegisters();
+    }
+
+
+    @FXML
+    public void deleteRecord(){
+        String query = "delete from v_rezerwacja where ID_REZERWACJI="+regIdTextField.getText()+" ";
+        dbController.executeQuery(query);
+        showRegisters();
+    }
+
 
     public void refreshOnClick(){
         dbController.executeQuery("commit");
@@ -100,13 +126,6 @@ public class RegisterTabController implements Initializable {
         carComboBox.getSelectionModel().clearSelection();
         locComboBox.getSelectionModel().clearSelection();
         showRegisters();
-
-    }
-
-    @FXML
-    public void insertRecord(){
-        String temp = dateFromDP.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-
 
     }
 
@@ -155,7 +174,7 @@ public class RegisterTabController implements Initializable {
         empComboBox.getSelectionModel().select(reg.getEmpId());
         carComboBox.getSelectionModel().select(reg.getCarId());
         locComboBox.getSelectionModel().select(reg.getPickupLoc());
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate date1 = LocalDate.parse(reg.getDateFrom(), formatter);
         LocalDate date2 = LocalDate.parse(reg.getDateTo(), formatter);
         dateFromDP.setValue(date1);
@@ -176,7 +195,7 @@ public class RegisterTabController implements Initializable {
             rs = st.executeQuery(query);
             Register reg;
             while (rs.next()){
-                reg = new Register(rs.getLong("ID_REZERWACJI"),rs.getLong("PESEL"),rs.getLong("ID_PRACOWNIKA"), rs.getLong("ID_EGZEMPLARZA"),rs.getString("DATA_OD"),rs.getString("DATA_DO"),rs.getString("LOKALIZACJA_ODBIORU"),rs.getLong("CENA_CALKOWITA"));
+                reg = new Register(rs.getLong("ID_REZERWACJI"),rs.getLong("PESEL"),rs.getLong("ID_PRACOWNIKA"), rs.getLong("ID_EGZEMPLARZA"),rs.getString("DATA_OD").substring(0,10),rs.getString("DATA_DO").substring(0,10),rs.getString("LOKALIZACJA_ODBIORU"),rs.getLong("CENA_CALKOWITA"));
                 registerList.add(reg);
             }
         }catch(Exception e){
